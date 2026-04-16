@@ -29,11 +29,6 @@ minikube image build -t skyroute/frontend:1.0.0 ./frontend
 kubectl apply -f k8s/all-in-one.yaml
 ```
 
-Or with kustomize:
-```bash
-kubectl apply -k k8s
-```
-
 ## 4) Validate
 ```bash
 kubectl get all -n skyroute
@@ -46,18 +41,7 @@ kubectl describe pod -n skyroute <pod-name>
 minikube service frontend -n skyroute --url
 ```
 
-You can also test the internal APIs:
-```bash
-kubectl port-forward -n skyroute svc/weather-service 8001:8000
-kubectl port-forward -n skyroute svc/users-service 8002:8000
-```
-
-## 6) Scale a service
-```bash
-kubectl scale deployment weather-service --replicas=2 -n skyroute
-```
-
-## 7) Delete everything
+## 6) Delete everything
 ```bash
 kubectl delete -f k8s/all-in-one.yaml
 ```
