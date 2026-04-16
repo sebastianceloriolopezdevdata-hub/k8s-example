@@ -1,0 +1,31 @@
+services:
+  weather-service:
+    build:
+      context: ./weather-service
+    container_name: weather-service
+    environment:
+      ALLOWED_CITIES: Bogota,Cali,Medellin,Cartagena,Barranquilla,Quito,Lima,Mexico City,Madrid,New York
+      OPEN_METEO_GEOCODING_URL: https://geocoding-api.open-meteo.com/v1/search
+      OPEN_METEO_WEATHER_URL: https://api.open-meteo.com/v1/forecast
+    ports:
+      - "8001:8000"
+    restart: unless-stopped
+
+  users-service:
+    build:
+      context: ./users-service
+    container_name: users-service
+    ports:
+      - "8002:8000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: weather-frontend
+    depends_on:
+      - weather-service
+      - users-service
+    ports:
+      - "8080:80"
+    restart: unless-stopped
