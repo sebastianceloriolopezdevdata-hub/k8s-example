@@ -1,6 +1,6 @@
 # Weather Microservices Demo
 
-A guided teaching project that demonstrates how to move from standalone services to containerized multi-service applications.
+A project that demonstrates how to move from standalone services to containerized multi-service applications.
 
 ## Scenario
 
@@ -11,7 +11,7 @@ A guided teaching project that demonstrates how to move from standalone services
 - see friendly weather metadata,
 - and validate a local admin user through a separate internal service.
 
-The solution is intentionally small but structured like a real microservice system:
+The solution is small but structured like a real microservice system:
 
 - **frontend**: React application for operators
 - **weather-service**: FastAPI service that integrates with Open-Meteo
@@ -101,33 +101,3 @@ Then open:
 - `GET /users`
 - `GET /users/admin`
 - `POST /login`
-
-## Good Practices Included
-
-- small and clear service boundaries
-- lightweight Docker images
-- multi-stage build for frontend
-- non-root user in Python containers
-- `requirements.txt` pinned at major/minor level
-- `.dockerignore` files
-- health endpoints
-- environment-driven service URLs on the frontend via Nginx reverse proxy
-
-## Suggested class flow
-
-1. Explain the scenario and architecture.
-2. Walk through each Dockerfile.
-3. Build and run with Docker Compose.
-4. Test the frontend and APIs.
-5. Show how service-to-service communication works.
-6. Use this as the base for a later Kubernetes lab.
-
-## Suggested follow-up lab
-
-Ask students to migrate this project to Minikube and add one missing Kubernetes concept such as:
-
-- PersistentVolumeClaim
-- ConfigMap
-- Secret
-- readiness/liveness probes
-- Ingress
