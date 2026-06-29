@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: weather-service-config
+  namespace: skyroute
+data:
+  ALLOWED_CITIES: "Bogota,Cali,Medellin,Cartagena,Barranquilla,Quito,Lima,Mexico City,Madrid,New York"
+  OPEN_METEO_GEOCODING_URL: "https://geocoding-api.open-meteo.com/v1/search"
+  OPEN_METEO_WEATHER_URL: "https://api.open-meteo.com/v1/forecast"
