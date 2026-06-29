@@ -101,3 +101,9 @@ Then open:
 - `GET /users`
 - `GET /users/admin`
 - `POST /login`
+
+## Application Preview
+
+<p align="center">
+  <img src="documents/Screenshot_2026-06-28_21-45-18.png" alt="Weather Microservices Demo" width="900">
+</p>
